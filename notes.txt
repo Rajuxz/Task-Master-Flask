@@ -1,0 +1,19 @@
+For database:
+--- from flask_sqlalchemy import SQLAlchemy
+---- Congigure the database as follows:
+
+        app.config['SQLALCHEMY_DATABASE_URI] = 'sqlite///database.db'
+
+        initializing database:
+        db = SQLAlchemy(app_name)
+
+        creating model: 
+            class ClassName(db.Model):
+                id = db.Column(db.Integer,primary_key = True)
+                content = db.Column(db.String(200),nullable=False)
+                date_created = db.Column(db.DateTime,default=datetime.utcnow)
+                (from datetime import datetime.)
+
+                function that return string everytime we insert the element: 
+                    def __repr__(self):
+                         return '<Task %r>' % self.id
